@@ -29,14 +29,3 @@ jobs:
       run: |
         node ./benchmark compare -t
         node ./benchmark compare -u
-
-    - name: commit and push updated results
-      uses: github-actions-x/commit@v2.8
-      with:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
-        push-branch: 'master'
-        commit-message: 'chore: update benchmark results'
-        force-add: 'true'
-        files: benchmark-results.json README.md
-        name: Github Actions
-        email: <>
